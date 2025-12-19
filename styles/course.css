@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+    padding: 40px;
+}
+
+/* Page Header */
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.header p {
+    color: #475569;
+}
+
+/* Course Card */
+.course-card {
+    height: 220px;
+    border-radius: 22px;
+    padding: 30px;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.course-card h2 {
+    font-size: 26px;
+}
+
+.course-card span {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 60px;
+    opacity: 0.25;
+}
+
+/* Content Section */
+.content {
+    margin-top: 30px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.content h3 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.content li {
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+/* Course Colors */
+.python {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+.html5 {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.english {
+    background: linear-gradient(135deg, #7c3aed, #4c1d95);
+}
+
+.lifeskill {
+    background: linear-gradient(135deg, #db2777, #9d174d);
+}
