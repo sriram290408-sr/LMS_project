@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conduct Test | FSSA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f5f7;
+      color: #333;
+    }
+
+    /* Top bar */
+    .topbar {
+      background: #1f1f1f;
+      padding: 14px 24px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar input {
+      width: 420px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+
+    /* Layout */
+    .layout {
+      display: flex;
+      min-height: calc(100vh - 56px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      border-right: 1px solid #e5e5e5;
+      padding: 20px 14px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    .menu a {
+      display: block;
+      padding: 10px 12px;
+      margin-bottom: 6px;
+      text-decoration: none;
+      color: #555;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .menu a.active,
+    .menu a:hover {
+      background: #e9f8fb;
+      color: #009fb7;
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 24px;
+    }
+
+    .back {
+      font-size: 13px;
+      color: #0077cc;
+      margin-bottom: 10px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    h2 { font-size: 20px; margin-bottom: 6px; }
+    .subtitle { color: #777; font-size: 13px; margin-bottom: 18px; }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin-bottom: 18px;
+    }
+
+    /* Test info */
+    .test-info {
+      border-left: 4px solid #00bcd4;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
+    }
+    .info small { color: #777; display: block; margin-bottom: 4px; }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .stat {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .stat h4 { font-size: 13px; color: #777; margin-bottom: 6px; }
+    .stat strong { font-size: 20px; }
+
+    .progress-bar {
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 10px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .progress {
+      width: 30%;
+      height: 100%;
+      background: #00bcd4;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+    th { color: #555; }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      display: inline-block;
+    }
+    .submitted { background: #e3f2fd; color: #1976d2; }
+    .graded { background: #e8f5e9; color: #2e7d32; }
+    .not-submitted { background: #ffebee; color: #c62828; }
+
+    .btn {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1000px) {
+      .test-info, .stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div>Conduct Test</div>
+    <input type="text" placeholder="Search Courses, Students and test" />
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">FSSA</div>
+      <nav class="menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Courses</a>
+        <a href="#">Students</a>
+        <a class="active" href="#">Grades</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <a href="#" class="back">← Back to Dashboard</a>
+      <h2>Conduct Test: Midterm Exam – Problem Solving 101</h2>
+      <p class="subtitle">Review submissions and enter marks for each student.</p>
+
+      <div class="card test-info">
+        <div class="info"><small>Course</small>Problem Solving 101</div>
+        <div class="info"><small>Date</small>November 15, 2025</div>
+        <div class="info"><small>Time</small>10:00 AM – 12:00 PM</div>
+        <div class="info"><small>Total Marks</small>100</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><h4>Total Students</h4><strong>10</strong></div>
+        <div class="stat"><h4>Graded</h4><strong>3 / 10</strong></div>
+        <div class="stat">
+          <h4>Progress</h4><strong>30%</strong>
+          <div class="progress-bar"><div class="progress"></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-bottom:12px">Student Submissions</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Student ID</th>
+              <th>Submission Status</th>
+              <th>Marks Obtained</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Emma Wilson</td><td>STU001</td>
+              <td><span class="badge submitted">Submitted</span></td>
+              <td>—</td><td><button class="btn">Enter Marks</button></td>
+            </tr>
+            <tr>
+              <td>Michael Chen</td><td>STU002</td>
+              <td><span class="badge graded">Graded</span></td>
+              <td>85 / 100</td><td><button class="btn">Edit Marks</button></td>
+            </tr>
+            <tr>
+              <td>Sophia Rodriguez</td><td>STU003</td>
+              <td><span class="badge submitted">Submitted</span></td>
+              <td>—</td><td><button class="btn">Enter Marks</button></td>
+            </tr>
+            <tr>
+              <td>James Anderson</td><td>STU004</td>
+              <td><span class="badge not-submitted">Not Submitted</span></td>
+              <td>—</td><td><button class="btn" disabled>Not Available</button></td>
+            </tr>
+            <tr>
+              <td>Olivia Brown</td><td>STU005</td>
+              <td><span class="badge graded">Graded</span></td>
+              <td>92 / 100</td><td><button class="btn">Edit Marks</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
