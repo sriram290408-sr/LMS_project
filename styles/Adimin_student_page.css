@@ -1,0 +1,178 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui, sans-serif;
+}
+
+body{
+  background:#f3f4f6;
+}
+
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  z-index:100;
+}
+
+.header h1{
+  color:#4f46e5;
+}
+
+.sidebar{
+  position:fixed;
+  top:80px;
+  left:0;
+  width:180px;
+  height:calc(100vh - 80px);
+  background:#fff;
+  box-shadow:2px 0 8px rgba(0,0,0,.05);
+}
+
+.sidebar ul{
+  padding:10px;
+}
+
+.sidebar li{
+  list-style:none;
+}
+
+.sidebar a{
+  display:flex;
+  gap:10px;
+  padding:10px;
+  border-radius:6px;
+  text-decoration:none;
+  color:#111;
+  transition:.3s;
+}
+
+.sidebar a:hover{
+  background:#4f46e5;
+  color:#fff;
+}
+
+
+.main{
+  margin-left:180px;
+  margin-top:100px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.row-between{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.input{
+  width:280px;
+  padding:10px 14px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  outline:none;
+}
+
+
+.btn-primary{
+  background:#4f46e5;
+  color:#fff;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.btn-primary:hover{
+  background:#4338ca;
+}
+
+
+.filters{
+  display:flex;
+  gap:40px;
+}
+
+.filters label{
+  font-size:14px;
+  margin-bottom:6px;
+  display:block;
+}
+
+.filters select{
+  padding:10px;
+  width:160px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+thead{
+  background:#f9fafb;
+}
+
+th,td{
+  padding:12px;
+  text-align:left;
+  font-size:14px;
+}
+
+tbody tr:nth-child(even){
+  background:#f3f4f6;
+}
+
+tbody tr:hover{
+  background:#e0e7ff;
+}
+
+
+.actions{
+  display:flex;
+  gap:8px;
+}
+
+.edit{
+  background:#6366f1;
+  color:#fff;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+.delete{
+  background:#f87171;
+  color:#fff;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+}
+.delete:hover{
+    background-color: red;
+}
+
+.edit:hover{
+    background-color: #4338ca;
+}
