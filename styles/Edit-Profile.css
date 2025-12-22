@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f0f0f0;
+}
+
+/* Top bar */
+.topbar {
+  background: #7fd3e6;
+  padding: 20px;
+}
+
+.topbar h1 {
+  font-size: 28px;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #8fd7e8;
+  padding: 30px 20px;
+  min-height: 100vh;
+}
+
+.sidebar a {
+  display: block;
+  font-size: 22px;
+  color: black;
+  text-decoration: none;
+  margin: 25px 0;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  background: #bdf2f8;
+  padding: 30px;
+}
+
+.main h2 {
+  margin-bottom: 20px;
+}
+
+/* Edit container */
+.edit-container {
+  display: flex;
+  gap: 50px;
+}
+
+/* Form */
+.form {
+  width: 45%;
+}
+
+.form label {
+  display: block;
+  margin-top: 15px;
+}
+
+.form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  background: #e0e0e0;
+  border: none;
+}
+
+.change-btn {
+  margin-top: 25px;
+  padding: 10px 15px;
+  background: #9be27d;
+  border: none;
+  cursor: pointer;
+}
+
+/* Image box */
+.image-box {
+  background: #e6e6e6;
+  padding: 20px;
+  text-align: center;
+}
+
+.circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px dashed black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.image-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.save {
+  background: #9be27d;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
