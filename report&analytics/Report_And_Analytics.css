@@ -1,0 +1,469 @@
+:root {
+    --primary-bg: #f4f7fe;
+    --white: #ffffff;
+    --text-dark: #2b3674;
+    --text-grey: #a3aed0;
+    
+    /* Card Colors */
+    --cyan-light: #e0f7fa;
+    --cyan-text: #00bcd4;
+    --green-light: #e8f5e9;
+    --green-text: #4caf50;
+    --orange-light: #fff3e0;
+    --orange-text: #ff9800;
+    --purple-light: #f3e5f5;
+    --purple-text: #9c27b0;
+    
+    --btn-blue: #4318ff;
+    
+    /* Pie Chart Colors */
+    --pie-1: #000080; /* Navy */
+    --pie-2: #00bcd4; /* Cyan */
+    --pie-3: #4318ff; /* Blue */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Using standard system fonts instead of Google Fonts */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--text-grey);
+    font-size: 15px;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+/* SVG Icon Styling */
+.nav-links a .icon {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    fill: var(--text-grey);
+    transition: 0.2s;
+}
+
+.nav-links a.active {
+    background-color: var(--cyan-light);
+    color: var(--cyan-text);
+    font-weight: 700;
+    border-left: 4px solid var(--cyan-text);
+}
+
+.nav-links a.active .icon {
+    fill: var(--cyan-text);
+}
+
+.nav-links a:hover:not(.active) {
+    background-color: #f8f9fa;
+    color: var(--text-dark);
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #FAFAFA;
+    overflow-y: auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.date-display {
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-weight: 500;
+    min-width: 220px;
+    text-align: center;
+}
+
+.date-display .separator {
+    margin: 0 8px; 
+    color: #ccc;
+}
+
+.export-btn {
+    background-color: var(--btn-blue);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.export-btn:hover {
+    opacity: 0.9;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+/* Metrics Cards */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    position: relative;
+    border-left: 4px solid transparent;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    color: var(--text-grey);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.card-trend {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.trend-icon {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
+/* Card Variants */
+.card.cyan { border-left-color: var(--cyan-text); }
+.card.cyan .card-icon { background: var(--cyan-light); color: var(--cyan-text); }
+.card.cyan .card-trend { color: var(--green-text); }
+
+.card.green { border-left-color: var(--green-text); }
+.card.green .card-icon { background: var(--green-light); color: var(--green-text); }
+.card.green .card-trend { color: var(--text-grey); }
+
+.card.orange { border-left-color: var(--orange-text); }
+.card.orange .card-icon { background: var(--orange-light); color: var(--orange-text); }
+.card.orange .card-trend { color: var(--orange-text); }
+
+.card.purple { border-left-color: var(--purple-text); }
+.card.purple .card-icon { background: var(--purple-light); color: var(--purple-text); }
+.card.purple .card-trend { color: var(--green-text); }
+
+/* Charts Layout */
+.charts-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    height: 400px;
+}
+
+.chart-box {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+/* --- Custom CSS Bar Chart --- */
+.css-bar-chart {
+    display: flex;
+    flex: 1;
+    position: relative;
+    padding-left: 30px; /* Space for Y-axis */
+    padding-bottom: 20px; /* Space for X-axis */
+}
+
+.y-axis {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-grey);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.bars-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    width: 15%;
+}
+
+.bar {
+    width: 100%;
+    background-color: var(--cyan-text);
+    border-radius: 5px 5px 0 0;
+    transition: height 1s ease-out;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip on hover */
+.bar:hover .tooltip {
+    opacity: 1;
+    top: -30px;
+}
+
+.tooltip {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    opacity: 0;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+.bar-label {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-grey);
+    text-align: center;
+}
+
+/* --- Custom CSS Pie Chart --- */
+.center-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.css-pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Pie Slices Logic (Conic Gradient):
+       Navy: 0% -> 65%
+       Cyan: 65% -> 85% (20% slice)
+       Blue: 85% -> 100% (15% slice)
+    */
+    background: conic-gradient(
+        var(--pie-1) 0% 65%, 
+        var(--pie-2) 65% 85%, 
+        var(--pie-3) 85% 100%
+    );
+    position: relative;
+}
+
+/* Create the Donut Hole (Optional - remove if you want a full pie) */
+.css-pie-chart::after {
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    /* Set width/height to 60% (e.g., 120px) to make it a donut chart */
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pie-legend {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-dark);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.color-1 { background: var(--pie-1); }
+.color-2 { background: var(--pie-2); }
+.color-3 { background: var(--pie-3); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .charts-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .chart-box {
+        min-height: 350px;
+    }
+    .css-bar-chart {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #eee;
+        border-right: none;
+        padding-bottom: 10px;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .nav-links li {
+        margin-bottom: 0;
+    }
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    body {
+        overflow: auto;
+    }
+}
